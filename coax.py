@@ -49,8 +49,6 @@ class WorkWithFile(Creator):
         elif rating < 0.0:
             while rating < 1.0:
                 rating = float(input("Введіть коректні дані:"))
-        header = ['author_name', 'note', 'rating']
-        self.file.writelines(str(header) + os.linesep)
         iterator = [author, note, rating]
         self.file.writelines(str(iterator) + os.linesep)
         self.file.close()
