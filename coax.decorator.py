@@ -7,7 +7,7 @@ def a_decorator_passing_arguments(fn):
     def wrapped(*args, **kwargs):
         time_start = time.time()
         rez = fn(*args, **kwargs)
-        print(f"function is rining for {time.time() - time_start}sec.")
+        print(f"function is runing for {time.time() - time_start}sec.")
         return rez
     return wrapped
 
