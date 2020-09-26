@@ -44,6 +44,7 @@ class WorkWithFile:
                 rating = float(input("Введіть коректні дані:"))
         iterator = [author, note, rating]
         self.file.writelines(str(iterator) + os.linesep)
+        self.file.close()
         return 'Add to the file:' + self.FILENAME
 
     def read_file(self):
