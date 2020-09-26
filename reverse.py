@@ -1,2 +1,2 @@
-s = str(input())
+s = "string"
 print(''.join(reversed(s)))
