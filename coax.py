@@ -53,10 +53,10 @@ class Functions(WorWithFile):
         return self.dataFrame().rating.max()
 
     def min_rating(self):
-        return self.dataFrame.rating.min()
+        return self.dataFrame().rating.min()
 
     def avg_rating(self):
-        return self.dataFrame.rating.mean()
+        return self.dataFrame().rating.mean()
 
 
 
