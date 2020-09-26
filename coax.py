@@ -16,7 +16,7 @@ class Creator:
 
     @property
     def dF(self):
-        self.df = pd.read_csv(self.FILENAME, header=None)
+        self.df = pd.read_csv(self.FILENAME, header=0)
         self.df.columns = ['author_name', 'note', 'rating']
         self.df['rating'] = self.df['rating'].apply(lambda x: x[1:-1])
         self.df['author_name'] = self.df['author_name'].apply(lambda x: x[2:-1])
