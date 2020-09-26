@@ -48,7 +48,7 @@ class WorkWithFile(Creator):
         return self.file.read()
 
 
-class Functions(WorWithFile):
+class Functions(WorkWithFile):
     def max_rating(self):
         return self.dataFrame().rating.max()
 
