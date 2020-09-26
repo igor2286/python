@@ -17,13 +17,13 @@ class Creator:
 class WorkWithFile(Creator):
 
     def dataFrame(self):
-        self.df = pd.read_csv(self.FILENAME, header=0)
-        self.df.columns = ['author_name', 'note', 'rating']
-        self.df['rating'] = self.df['rating'].apply(lambda x: x[1:-1])
-        self.df['author_name'] = self.df['author_name'].apply(lambda x: x[2:-1])
-        self.df['note'] = self.df['note'].apply(lambda x: x[2:-1])
-        self.df['rating'] = self.df['rating'].apply(pd.to_numeric)
-        return self.df
+        df = pd.read_csv(self.FILENAME, header=0)
+        df.columns = ['author_name', 'note', 'rating']
+        df['rating'] = df['rating'].apply(lambda x: x[1:-1])
+        df['author_name'] = df['author_name'].apply(lambda x: x[2:-1])
+        df['note'] = df['note'].apply(lambda x: x[2:-1])
+        df['rating'] = df['rating'].apply(pd.to_numeric)
+        return df
 
     def write_to_file(self):
         author = input('Add_author: ')
