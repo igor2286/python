@@ -14,17 +14,6 @@ class Creator:
         return 'Header is Created!\nTry to read or write something in file!'
 
 
-    @property
-    def dF(self):
-        self.df = pd.read_csv(self.FILENAME, header=0)
-        self.df.columns = ['author_name', 'note', 'rating']
-        self.df['rating'] = self.df['rating'].apply(lambda x: x[1:-1])
-        self.df['author_name'] = self.df['author_name'].apply(lambda x: x[2:-1])
-        self.df['note'] = self.df['note'].apply(lambda x: x[2:-1])
-        self.df['rating'] = self.df['rating'].apply(pd.to_numeric)
-        return self.df
-
-
 class WorkWithFile(Creator):
 
     def dataFrame(self):
@@ -59,15 +48,15 @@ class WorkWithFile(Creator):
         return self.file.read()
 
 
-class Functions(Creator):
+class Functions(WorWithFile):
     def max_rating(self):
-        return self.dF.rating.max()
+        return self.dataFrame().rating.max()
 
     def min_rating(self):
-        return float(self.dF.rating.min())
+        return self.dataFrame.rating.min()
 
     def avg_rating(self):
-        return self.dF.rating.mean()
+        return self.dataFrame.rating.mean()
 
 
 
