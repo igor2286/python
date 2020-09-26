@@ -18,8 +18,7 @@ class WorkWithFile:
         df['rating'] = df['rating'].apply(lambda x: x[1:-1])
         df['author_name'] = df['author_name'].apply(lambda x: x[2:-1])
         df['note'] = df['note'].apply(lambda x: x[2:-1])
-        df['rating'] = df['rating'].apply(pd.to_numeric, errors='coerce')
-
+        df['rating'] = df['rating'].apply(pd.to_numeric)
         return df
 
     def write_to_file(self):
@@ -45,7 +44,6 @@ class WorkWithFile:
                 rating = float(input("Введіть коректні дані:"))
         iterator = [author, note, rating]
         self.file.writelines(str(iterator) + os.linesep)
-
         return 'Add to the file:' + self.FILENAME
 
     def read_file(self):
